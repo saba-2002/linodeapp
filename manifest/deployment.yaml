@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: linodeapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: linodeapp
+  template:
+    metadata:
+      labels:
+        app: linodeapp
+    spec:
+      containers:
+      - name: linodeapp
+        image: saba2002/linodeapp:latest
+        ports:
+        - containerPort: 3000

@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth
+  name: linodeapp-auth
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: auth
+      app: linodeapp-auth
   template:
     metadata:
       labels:
-        app: auth
+        app: linodeapp-auth
     spec:
       containers:
-      - name: auth
-        image: yourdockerhub/auth:latest
+      - name: linodeapp-auth
+        image: saba2002/linodeapp-auth:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 3001

@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: linodeapp-auth
+  name: auth
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: linodeapp-auth
+      app: auth
   template:
     metadata:
       labels:
-        app: linodeapp-auth
+        app: auth
     spec:
       containers:
-      - name: linodeapp-auth
-        image: saba2002/linodeapp-auth:latest
+      - name: auth
+        image: 287870619543.dkr.ecr.us-east-1.amazonaws.com/auth:1
         ports:
         - containerPort: 3001

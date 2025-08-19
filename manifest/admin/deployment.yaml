@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: linodeapp
+  name: admin
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: linodeapp
+      app: admin
   template:
     metadata:
       labels:
-        app: linodeapp
+        app: admin
     spec:
       containers:
-      - name: linodeapp
-        image: saba2002/linodeapp:latest
+      - name: admin
+        image: 287870619543.dkr.ecr.us-east-1.amazonaws.com/admin:1
         ports:
         - containerPort: 3000
